@@ -6,6 +6,10 @@
 
 int main(int argc, char *argv[]) {
 
+    ClockWindow cwin(800, 600);
+    
+    int ret;
+    ret = cwin.mainLoop();
 
-    return EXIT_SUCCESS;;
+    return ret;;
 }
