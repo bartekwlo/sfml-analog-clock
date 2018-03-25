@@ -1,0 +1,4 @@
+#!/bin/bash
+# This script is used to set LD_LIBRARY_PATH environment variable and then to run analog-clock executable.
+export LD_LIBRARY_PATH=../SFML-2.4/lib
+./analog-clock
