@@ -11,5 +11,5 @@ int main(int argc, char *argv[]) {
     int ret;
     ret = cwin.mainLoop();
 
-    return ret;;
+    return ret;
 }
