@@ -12,11 +12,12 @@ class Clock : public sf::Drawable {
         ClockHand mSecondsHand;
         sf::CircleShape mClockCenterCircle;
     
-        void configureClockCenterCircle();
+        void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor);
+        void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor, sf::Color outlineColor, float outlineThickness);
+        void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
     public:
         Clock(sf::Vector2f center);
-        void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 
 
