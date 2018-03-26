@@ -22,6 +22,7 @@ int ClockWindow::mainLoop() {
     }  
 
     mWindow.clear();
+    mWindow.draw(*mClock);
     mWindow.display();
     
     return 0;
