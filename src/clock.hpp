@@ -2,12 +2,13 @@
 #define CLOCK_HPP
 
 #include <SFML/Graphics.hpp>
+#include "clock-hand.hpp"
 
 class Clock : public sf::Drawable {
     private:
-        sf::RectangleShape hoursHand;
-        sf::RectangleShape minutesHand;
-        sf::RectangleShape secondsHand;
+        ClockHand hoursHand;
+        ClockHand minutesHand;
+        ClockHand secondsHand;
 
     public:
         Clock();
