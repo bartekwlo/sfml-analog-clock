@@ -19,11 +19,11 @@ int ClockWindow::mainLoop() {
             if (event.type == sf::Event::Closed)
                 mWindow.close();
         }
-    }  
 
-    mWindow.clear();
-    mWindow.draw(*mClock);
-    mWindow.display();
+        mWindow.clear(sf::Color::White);
+        mWindow.draw(*mClock);
+        mWindow.display();
+    }  
     
     return 0;
 }
