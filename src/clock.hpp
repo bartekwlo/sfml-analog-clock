@@ -10,9 +10,9 @@ class Clock : public sf::Drawable {
         ClockHand mHoursHand;
         ClockHand mMinutesHand;
         ClockHand mSecondsHand;
-        sf::CircleShape mClockCircle;
+        sf::CircleShape mClockCenterCircle;
     
-        void configureClockCircle(sf::Vector2f center);
+        void configureClockCenterCircle();
 
     public:
         Clock(sf::Vector2f center);
