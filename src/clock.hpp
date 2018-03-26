@@ -10,7 +10,8 @@ class Clock : public sf::Drawable {
         ClockHand mHoursHand;
         ClockHand mMinutesHand;
         ClockHand mSecondsHand;
-        sf::CircleShape mClockCenterCircle;
+        sf::CircleShape mCenterCircle;
+        sf::CircleShape mOutlineCircle;
     
         void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor);
         void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor, sf::Color outlineColor, float outlineThickness);

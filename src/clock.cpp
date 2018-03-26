@@ -5,11 +5,13 @@ Clock::Clock(sf::Vector2f center) {
     mHoursHand.configure(center, sf::Vector2f(5, 180), sf::Color::Black);
     mMinutesHand.configure(center, sf::Vector2f(3, 240), sf::Color::Black);
     mSecondsHand.configure(center, sf::Vector2f(2, 260), sf::Color::Red);
-    configureClockCircle(mClockCenterCircle, 50, sf::Color::Red);
+    configureClockCircle(mCenterCircle, 50, sf::Color::Red);
+    configureClockCircle(mOutlineCircle, 260, sf::Color::White, sf::Color::Red, 2);
 }
 
 void Clock::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-    target.draw(mClockCenterCircle);
+    target.draw(mOutlineCircle);
+    target.draw(mCenterCircle);
     target.draw(mHoursHand);
     target.draw(mMinutesHand);
     target.draw(mSecondsHand);
