@@ -4,14 +4,17 @@
 #include <SFML/Graphics.hpp>
 #include "clock-hand.hpp"
 
+#define DEFAULT_CLOCK_CENTRE sf::Vector2f(400, 300);
+
 class Clock : public sf::Drawable {
     private:
-        ClockHand hoursHand;
-        ClockHand minutesHand;
-        ClockHand secondsHand;
+        ClockHand mHoursHand;
+        ClockHand mMinutesHand;
+        ClockHand mSecondsHand;
 
     public:
         Clock();
+        Clock(sf::Vector2f center);
         void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 

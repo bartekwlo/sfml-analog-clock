@@ -7,7 +7,7 @@
 #define DEFAULT_CLOCK_HAND_COLOR sf::Color::Black
 #define DEFAULT_CLOCK_HAND_POSITION sf::Vector2f(400, 300)
 
-class ClockHand : sf::RectangleShape {
+class ClockHand : public sf::RectangleShape {
     private:
     public:
         ClockHand();
