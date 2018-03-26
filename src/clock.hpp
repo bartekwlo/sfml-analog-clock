@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "clock-hand.hpp"
 
-#define DEFAULT_CLOCK_CENTRE sf::Vector2f(400, 300);
+#define DEFAULT_CLOCK_CENTER sf::Vector2f(400, 300);
 
 class Clock : public sf::Drawable {
     private:

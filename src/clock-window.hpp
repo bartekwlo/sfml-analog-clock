@@ -9,12 +9,12 @@ class ClockWindow {
         const int mWidth;
         const int mHeight;
         sf::RenderWindow mWindow;
-        Clock *mClock;
+        Clock* mClock;
 
     public:
         ClockWindow(int width, int height);
         ~ClockWindow();
-           
+
         int mainLoop(); 
         Clock* getClock();
 };
