@@ -1,6 +1,5 @@
 #include "clock-window.hpp"
 
-
 // ClockWindow class constructor
 ClockWindow::ClockWindow(int width, int height) : mWidth(width), mHeight(height) {
     mClock = new Clock();
