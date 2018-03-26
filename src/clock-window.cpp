@@ -2,8 +2,8 @@
 
 // ClockWindow class constructor
 ClockWindow::ClockWindow(int width, int height) : mWidth(width), mHeight(height) {
-    mClock = new Clock(sf::Vector2f(mWindow.getSize().x / 2.0f, mWindow.getSize().y / 2.0f));
     mWindow.create(sf::VideoMode(mWidth, mHeight), "SFML Analog Clock");
+    mClock = new Clock(sf::Vector2f(mWindow.getSize().x / 2.0f, mWindow.getSize().y / 2.0f));
 }
 
 // ClockWindow class destructor

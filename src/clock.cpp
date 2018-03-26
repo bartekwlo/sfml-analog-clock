@@ -1,4 +1,5 @@
 #include "clock.hpp"
+#include <iostream>
 
 Clock::Clock(sf::Vector2f center) {
     mCenter = center;
@@ -6,6 +7,7 @@ Clock::Clock(sf::Vector2f center) {
     mMinutesHand.configure(center, sf::Vector2f(3, 240), sf::Color::Black);
     mSecondsHand.configure(center, sf::Vector2f(2, 260), sf::Color::Red);
     configureClockCircle(center);
+    std::cout << mCenter.x << " " << mCenter.y << std::endl;
 }
 
 void Clock::draw(sf::RenderTarget& target, sf::RenderStates states) const {
