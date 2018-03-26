@@ -5,11 +5,14 @@ SFML_LINKER_STRING= -L$(SFML_LIBRARY_PATH) -lsfml-graphics -lsfml-window -lsfml-
 
 all: analog-clock
 
-analog-clock: clock-window.o clock.o main.o
-	$(CXX) $(CFLAGS) main.o clock.o clock-window.o -o bin/analog-clock $(SFML_LINKER_STRING)
+analog-clock: clock-window.o clock-hand.o clock.o main.o
+	$(CXX) $(CFLAGS) main.o clock.o clock-hand.o clock-window.o -o bin/analog-clock $(SFML_LINKER_STRING)
 
 clock.o: src/clock.cpp src/clock.hpp
 	$(CXX) $(CFLAGS) -c src/clock.cpp
+
+clock-hand.o: src/clock-hand.cpp src/clock-hand.hpp
+	$(CXX) $(CFLAGS) -c src/clock-hand.cpp
 
 clock-window.o: src/clock-window.cpp src/clock-window.hpp
 	$(CXX) $(CFLAGS) -c src/clock-window.cpp
