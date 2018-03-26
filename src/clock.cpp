@@ -9,11 +9,16 @@ Clock::Clock(sf::Vector2f center) {
 }
 
 void Clock::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+    target.draw(mClockCircle);
     target.draw(mHoursHand);
     target.draw(mMinutesHand);
     target.draw(mSecondsHand);
 }
 
 void Clock::configureClockCircle(sf::Vector2f center) {
-
+    mClockCircle.setRadius(300);
+    mClockCircle.setPointCount(100);
+    mClockCircle.setFillColor(sf::Color::Red);
+    mClockCircle.setOrigin(mClockCircle.getGlobalBounds().width / 2, mClockCircle.getGlobalBounds().height / 2);
+    mClockCircle.setPosition(center);
 }
