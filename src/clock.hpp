@@ -12,6 +12,7 @@ class Clock : public sf::Drawable {
 
     public:
         Clock();
+        void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 
 

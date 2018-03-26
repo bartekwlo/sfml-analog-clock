@@ -12,7 +12,7 @@ class ClockHand : sf::RectangleShape {
     public:
         ClockHand();
         ClockHand(sf::Vector2f position, sf::Vector2f size, sf::Color color);
-        void configure(sf::Vector2f position, sf::Vector2f size, sf::Color color));
+        void configure(sf::Vector2f position, sf::Vector2f size, sf::Color color);
 };
 
 #endif
