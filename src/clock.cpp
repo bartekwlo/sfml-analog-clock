@@ -13,3 +13,7 @@ void Clock::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     target.draw(mMinutesHand);
     target.draw(mSecondsHand);
 }
+
+void Clock::configureClockCircle(sf::Vector2f center) {
+
+}
