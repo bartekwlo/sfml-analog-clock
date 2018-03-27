@@ -19,7 +19,7 @@ void Clock::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 
 void Clock::configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor) {
     circle.setRadius(radius);
-    circle.setPointCount(200);
+    circle.setPointCount(400);
     circle.setFillColor(fillColor);
     circle.setOrigin(circle.getGlobalBounds().width / 2,circle.getGlobalBounds().height / 2);
     circle.setPosition(mCenter);
