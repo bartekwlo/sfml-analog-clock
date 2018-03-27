@@ -68,5 +68,12 @@ void Clock::setTime() {
 }
 
 void Clock::updateTime() {
-
+    // get current time
+    std::time_t timeNow = std::time(NULL);
+    struct tm * ptm = localtime(&timeNow);
+    
+    // move the hands accordingly
+    mSecondsHand.setRotation(ptm->tm_sec*6);
+    mMinutesHand.setRotation(ptm->tm_min*6 + (ptm->tm_sec/12));
+    mHoursHand.setRotation(ptm->tm_hour*30 + (ptm->tm_min/2));
 }
