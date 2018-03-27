@@ -6,7 +6,7 @@ Clock::Clock(sf::Vector2f center) {
     mMinutesHand.configure(sf::Vector2f(center.x, center.y-50), sf::Vector2f(5, 180), sf::Color::Black);
     mSecondsHand.configure(sf::Vector2f(center.x, center.y-90), sf::Vector2f(5, 220), sf::Color::Red);
     configureClockCircle(mCenterCircle, 15, sf::Color::Red);
-    configureClockCircle(mOutlineCircle, 260, sf::Color::White, sf::Color::Black, 2);
+    configureClockCircle(mOutlineCircle, 260, sf::Color::White, sf::Color::Black, 5);
     createDots();
 }
 
@@ -44,8 +44,8 @@ void Clock::createDots() {
     int x, y;
 
     for (int i=0; i<60; i++) {
-        x = centerCircleRadius * cos(angle);
-        y = centerCircleRadius * sin(angle);
+        x = (centerCircleRadius - 10) * cos(angle);
+        y = (centerCircleRadius - 10) * sin(angle);
 
         if (i%5 == 0)
             mDots[i] = sf::CircleShape(8);
