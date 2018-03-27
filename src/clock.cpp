@@ -2,9 +2,9 @@
 
 Clock::Clock(sf::Vector2f center) {
     mCenter = center;
-    mHoursHand.configure(sf::Vector2f(center.x, center.y-35), sf::Vector2f(10, 150), sf::Color::Black);
-    mMinutesHand.configure(sf::Vector2f(center.x, center.y-50), sf::Vector2f(5, 180), sf::Color::Black);
-    mSecondsHand.configure(sf::Vector2f(center.x, center.y-90), sf::Vector2f(5, 220), sf::Color::Red);
+    mHoursHand.configure(sf::Vector2f(center.x, center.y), sf::Vector2f(8, 150), sf::Color::Black, 100);
+    mMinutesHand.configure(sf::Vector2f(center.x, center.y), sf::Vector2f(5, 180), sf::Color::Black, 85);
+    mSecondsHand.configure(sf::Vector2f(center.x, center.y), sf::Vector2f(5, 220), sf::Color::Red, 45);
     configureClockCircle(mCenterCircle, 15, sf::Color::Red);
     configureClockCircle(mOutlineCircle, 260, sf::Color::Transparent, sf::Color::Black, 5);
     createDots();
