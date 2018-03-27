@@ -21,6 +21,7 @@ int ClockWindow::mainLoop() {
         }
 
         mWindow.clear(sf::Color::White);
+        getClock()->updateTime();
         mWindow.draw(*mClock);
         mWindow.display();
     }  
