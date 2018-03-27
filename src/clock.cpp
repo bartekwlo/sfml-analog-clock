@@ -7,6 +7,7 @@ Clock::Clock(sf::Vector2f center) {
     mSecondsHand.configure(sf::Vector2f(center.x, center.y-90), sf::Vector2f(5, 220), sf::Color::Red);
     configureClockCircle(mCenterCircle, 15, sf::Color::Red);
     configureClockCircle(mOutlineCircle, 260, sf::Color::White, sf::Color::Black, 2);
+    createDots();
 }
 
 void Clock::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -15,6 +16,11 @@ void Clock::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     target.draw(mMinutesHand);
     target.draw(mSecondsHand);
     target.draw(mCenterCircle);
+
+    // draw dots around outline circle
+    for (int i=0; i<60; i++) {
+        target.draw(mDots[i]);
+    }
 }
 
 void Clock::configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor) {
@@ -41,6 +47,15 @@ void Clock::createDots() {
         x = centerCircleRadius * cos(angle);
         y = centerCircleRadius * sin(angle);
 
+        if (i%5 == 0)
+            mDots[i] = sf::CircleShape(8);
+        else
+            mDots[i] = sf::CircleShape(4);
 
+        mDots[i].setFillColor(sf::Color::Black);
+        mDots[i].setOrigin(mDots[i].getGlobalBounds().width / 2, mDots[i].getGlobalBounds().height / 2);
+        mDots[i].setPosition(x + mCenter.x, y + mCenter.y);
+
+        angle = angle + ((2* M_PI)/60);
     }
 }
