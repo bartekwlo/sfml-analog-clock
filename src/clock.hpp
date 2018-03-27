@@ -23,7 +23,6 @@ class Clock : public sf::Drawable {
 
     public:
         Clock(sf::Vector2f center);
-        void setTime(); // unused
         void updateTime();
 };
 

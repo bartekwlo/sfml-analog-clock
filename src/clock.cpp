@@ -63,10 +63,6 @@ void Clock::createDots() {
     }
 }
 
-void Clock::setTime() {
-
-}
-
 void Clock::updateTime() {
     // get current time
     std::time_t timeNow = std::time(NULL);
