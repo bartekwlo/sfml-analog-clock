@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[]) {
 
-    ClockWindow cwin(1024, 768);
+    ClockWindow cwin(800, 600);
     
     int ret;
     ret = cwin.mainLoop();
