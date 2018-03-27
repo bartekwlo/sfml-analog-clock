@@ -12,9 +12,11 @@ class Clock : public sf::Drawable {
         ClockHand mSecondsHand;
         sf::CircleShape mCenterCircle;
         sf::CircleShape mOutlineCircle;
-    
+        sf::CircleShape mDots[60];
+
         void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor);
         void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor, sf::Color outlineColor, float outlineThickness);
+        void createDots();
         void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
     public:

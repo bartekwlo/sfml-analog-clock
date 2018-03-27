@@ -30,3 +30,16 @@ void Clock::configureClockCircle(sf::CircleShape& circle, float radius, sf::Colo
     circle.setOutlineColor(outlineColor);
     circle.setOutlineThickness(outlineThickness);
 }
+
+void Clock::createDots() {
+// github.com/SFML/SFML/wiki/Source:-Analog-Clock/
+    float angle = 0.0;
+    float centerCircleRadius = mOutlineCircle.getRadius();
+
+    for (int i=0; i<60; i++) {
+        x = centerCircleRadius * cos(angle);
+        y = centerCircleRadius * sin(angle);
+
+
+    }
+}
