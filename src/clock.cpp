@@ -11,11 +11,14 @@ Clock::Clock(sf::Vector2f center) {
 }
 
 void Clock::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-    target.draw(mOutlineCircle);
+    // draw clock hands
     target.draw(mHoursHand);
     target.draw(mMinutesHand);
     target.draw(mSecondsHand);
+
+    // draw circles
     target.draw(mCenterCircle);
+    target.draw(mOutlineCircle);
 
     // draw dots around outline circle
     for (int i=0; i<60; i++) {
