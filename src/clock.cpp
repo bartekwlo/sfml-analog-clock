@@ -35,6 +35,7 @@ void Clock::createDots() {
 // github.com/SFML/SFML/wiki/Source:-Analog-Clock/
     float angle = 0.0;
     float centerCircleRadius = mOutlineCircle.getRadius();
+    int x, y;
 
     for (int i=0; i<60; i++) {
         x = centerCircleRadius * cos(angle);

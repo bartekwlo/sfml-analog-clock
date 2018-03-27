@@ -1,6 +1,8 @@
 #ifndef CLOCK_HPP
 #define CLOCK_HPP
 
+#include <ctime>
+#include <cmath>
 #include <SFML/Graphics.hpp>
 #include "clock-hand.hpp"
 

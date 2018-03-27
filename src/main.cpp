@@ -1,6 +1,4 @@
 #include <iostream>
-#include <ctime>
-#include <cmath>
 #include "clock.hpp"
 #include "clock-window.hpp"
 
