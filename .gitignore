@@ -1,4 +1,5 @@
 .DS_Store
 SFML-2.4
+sound
 *.o
 *.swp
