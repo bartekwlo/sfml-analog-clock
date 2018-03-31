@@ -8,6 +8,7 @@ Clock::Clock(sf::Vector2f center) {
     configureClockCircle(mCenterCircle, 15, sf::Color::Red);
     configureClockCircle(mOutlineCircle, 260, sf::Color::Transparent, sf::Color::Black, 5);
     createDots();
+    loadSoundToBuffer(mTickSoundBuffer, "../sound/clock.ogg");
 }
 
 void Clock::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -60,6 +61,12 @@ void Clock::createDots() {
         mDots[i].setPosition(x + mCenter.x, y + mCenter.y);
 
         angle = angle + ((2* M_PI)/60);
+    }
+}
+
+void Clock::loadSoundToBuffer(sf::SoundBuffer& target, std::string soundPath) {
+    if (!target.loadFromFile(soundPath)) {
+        std::cout << "Could not load sound: " << soundPath << " to buffer: " << target << std::endl;
     }
 }
 

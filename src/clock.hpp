@@ -3,6 +3,8 @@
 
 #include <ctime>
 #include <cmath>
+#include <iostream>
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include "clock-hand.hpp"
 
@@ -15,10 +17,12 @@ class Clock : public sf::Drawable {
         sf::CircleShape mCenterCircle;
         sf::CircleShape mOutlineCircle;
         sf::CircleShape mDots[60];
+        sf::SoundBuffer mTickSoundBuffer;
 
         void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor);
         void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor, sf::Color outlineColor, float outlineThickness);
         void createDots();
+        void loadSoundToBuffer(sf::SoundBuffer& target, std::string soundPath);
         void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
     public:
