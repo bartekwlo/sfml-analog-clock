@@ -17,21 +17,17 @@ class Clock : public sf::Drawable {
         sf::CircleShape mCenterCircle;
         sf::CircleShape mOutlineCircle;
         sf::CircleShape mDots[60];
-        sf::SoundBuffer mTickSoundBuffer;
-        sf::Sound mTickSound;
+        sf::Music mTickSoundMusic;
 
         void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor);
         void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor, sf::Color outlineColor, float outlineThickness);
         void createDots();
-        void loadTickSoundToBuffer(std::string soundPath);
-        void setTickSoundBuffer();
+        void loadTickSoundMusic(std::string soundPath);
         void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
     public:
         Clock(sf::Vector2f center);
         void updateTime();
-        sf::SoundBuffer& getTickSoundBuffer();
-        sf::Sound& getTickSound();
 };
 
 

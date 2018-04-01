@@ -8,8 +8,10 @@ Clock::Clock(sf::Vector2f center) {
     configureClockCircle(mCenterCircle, 15, sf::Color::Red);
     configureClockCircle(mOutlineCircle, 260, sf::Color::Transparent, sf::Color::Black, 5);
     createDots();
-    loadTickSoundToBuffer("../sound/clock.ogg");
-    mTickSound.setBuffer(mTickSoundBuffer);
+
+    // play tick sound music
+    loadTickSoundMusic("../sound/clock.wav");
+    mTickSoundMusic.play();
 }
 
 void Clock::draw(sf::RenderTarget& target, sf::RenderStates states) const {
@@ -65,10 +67,17 @@ void Clock::createDots() {
     }
 }
 
-void Clock::loadTickSoundToBuffer(std::string soundPath) {
-    if (!mTickSoundBuffer.loadFromFile(soundPath)) {
-        std::cout << "Could not load sound: " << soundPath << std::endl;
+void Clock::loadTickSoundMusic(std::string soundPath) {
+    if (!mTickSoundMusic.openFromFile(soundPath)) {
+        std::cout << "Could not load sound (music) : " << soundPath << std::endl;
+        return;
     }
+   
+    // make tick sounds loop
+    mTickSoundMusic.setLoop(true);
+
+    // make tick sound a little quieter
+    mTickSoundMusic.setVolume(50.0);
 }
 
 void Clock::updateTime() {
@@ -80,12 +89,4 @@ void Clock::updateTime() {
     mSecondsHand.setRotation(ptm->tm_sec*6);
     mMinutesHand.setRotation(ptm->tm_min*6 + (ptm->tm_sec/12));
     mHoursHand.setRotation(ptm->tm_hour*30 + (ptm->tm_min/2));
-}
-
-sf::SoundBuffer& Clock::getTickSoundBuffer() {
-    return mTickSoundBuffer;
-}
-
-sf::Sound& Clock::getTickSound() {
-    return mTickSound;
 }
