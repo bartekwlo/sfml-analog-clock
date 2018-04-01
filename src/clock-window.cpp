@@ -21,7 +21,7 @@ int ClockWindow::mainLoop() {
         }
 
         mWindow.clear(sf::Color::White);
-        getClock()->updateTime();
+        mClock->updateTime();
         mWindow.draw(*mClock);
         mWindow.display();
     }  
@@ -29,7 +29,3 @@ int ClockWindow::mainLoop() {
     return 0;
 }
 
-// Returns pointer to the Clock object
-Clock* ClockWindow::getClock() {
-    return mClock;
-}

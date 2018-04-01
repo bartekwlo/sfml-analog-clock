@@ -16,7 +16,6 @@ class ClockWindow {
         ~ClockWindow();
 
         int mainLoop(); 
-        Clock* getClock();
 };
 
 #endif
