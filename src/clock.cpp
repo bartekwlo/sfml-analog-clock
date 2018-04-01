@@ -8,7 +8,7 @@ Clock::Clock(sf::Vector2f center) {
     configureClockCircle(mCenterCircle, 15, sf::Color::Red);
     configureClockCircle(mOutlineCircle, 260, sf::Color::Transparent, sf::Color::Black, 5);
     createDots();
-    loadSoundToBuffer("../sound/clock.ogg");
+    loadTickSoundToBuffer("../sound/clock.ogg");
     mTickSound.setBuffer(mTickSoundBuffer);
 }
 

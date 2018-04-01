@@ -24,6 +24,8 @@ int ClockWindow::mainLoop() {
         mClock->updateTime();
         mWindow.draw(*mClock);
         mWindow.display();
+
+        mClock->getTickSound().play();
     }  
     
     return 0;
