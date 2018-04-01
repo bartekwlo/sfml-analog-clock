@@ -66,7 +66,7 @@ void Clock::createDots() {
 
 void Clock::loadSoundToBuffer(sf::SoundBuffer& target, std::string soundPath) {
     if (!target.loadFromFile(soundPath)) {
-        std::cout << "Could not load sound: " << soundPath << " to buffer: " << target << std::endl;
+        std::cout << "Could not load sound: " << soundPath << std::endl;
     }
 }
 
