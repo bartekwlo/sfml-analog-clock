@@ -18,7 +18,6 @@ class Clock : public sf::Drawable {
         sf::CircleShape mOutlineCircle;
         sf::CircleShape mDots[60];
         sf::Music mTickSoundMusic;
-        sf::Text mTickSoundMuteText;
 
         void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor);
         void configureClockCircle(sf::CircleShape& circle, float radius, sf::Color fillColor, sf::Color outlineColor, float outlineThickness);
