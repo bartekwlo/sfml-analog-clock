@@ -18,6 +18,11 @@ int ClockWindow::mainLoop() {
         while (mWindow.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 mWindow.close();
+
+            if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::M)
+                    mClock->switchTickSoundOnOff();
+            }
         }
 
         mWindow.clear(sf::Color::White);

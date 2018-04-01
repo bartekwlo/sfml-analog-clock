@@ -28,6 +28,7 @@ class Clock : public sf::Drawable {
     public:
         Clock(sf::Vector2f center);
         void updateTime();
+        void switchTickSoundOnOff();
 };
 
 
