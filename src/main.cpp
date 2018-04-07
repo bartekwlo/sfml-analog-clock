@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[]) {
 
-    ClockWindow cwin(800, 600);
+    ClockWindow cwin(CLOCK_WINDOW_SIZE_DEFAULT);
     
     int ret;
     ret = cwin.mainLoop();
