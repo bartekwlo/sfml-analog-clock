@@ -81,10 +81,11 @@ void Clock::loadTickSoundMusic(std::string soundPath) {
 }
 
 void Clock::switchTickSoundOnOff() {
-    if (mTickSoundMusic.getVolume() > 0)
+    if (mTickSoundMusic.getVolume() > 0) {
         mTickSoundMusic.setVolume(0.0);
-    else if (mTickSoundMusic.getVolume() == 0)
+    } else if (mTickSoundMusic.getVolume() == 0) {
         mTickSoundMusic.setVolume(50.0);
+    }
 }
 
 void Clock::updateTime() {
