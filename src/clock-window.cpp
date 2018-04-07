@@ -1,14 +1,8 @@
 #include "clock-window.hpp"
 
 // ClockWindow class constructor
-ClockWindow::ClockWindow(int width, int height) : mWidth(width), mHeight(height) {
+ClockWindow::ClockWindow(int width, int height) : mWidth(width), mHeight(height), mClock(sf::Vector2f(width/2.0f, height/2.0f)) {
     mWindow.create(sf::VideoMode(mWidth, mHeight), "SFML Analog Clock");
-    mClock = new Clock(sf::Vector2f(mWindow.getSize().x / 2.0f, mWindow.getSize().y / 2.0f));
-}
-
-// ClockWindow class destructor
-ClockWindow::~ClockWindow() {
-    delete mClock;
 }
 
 // ClockWindow main event loop method
@@ -21,13 +15,13 @@ int ClockWindow::mainLoop() {
 
             if (event.type == sf::Event::KeyPressed) {
                 if (event.key.code == sf::Keyboard::M)
-                    mClock->switchTickSoundOnOff();
+                    mClock.switchTickSoundOnOff();
             }
         }
 
         mWindow.clear(sf::Color::White);
-        mClock->updateTime();
-        mWindow.draw(*mClock);
+        mClock.updateTime();
+        mWindow.draw(mClock);
         mWindow.display();
     }  
     
